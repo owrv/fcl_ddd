@@ -1,0 +1,45 @@
+import { v4 as uuid } from "uuid";
+// import Address from "./address";
+
+import { ErrorCustomer } from "../../core/errors/error-customer.js";
+
+class Customer {
+    private _id: string;
+    private _name: string
+    private _address: string;
+    
+    constructor(name: string, address: string) {
+        this._id = uuid();
+        this._name = name;
+        this._address = address;
+    }
+    
+    validate(): void {
+        if(this._name.length === 0 || this._name.length < 3) {
+            throw ErrorCustomer.EmptyName();
+        }
+        if(this._address.length === 0 || this._address.length < 3) {
+            throw ErrorCustomer.EmptyAddress();
+        }
+    }
+
+    changeName(name: string): void {
+        this._name = name;
+        this.validate();
+    }
+
+    changeAddress(address: string): void {
+        this._address = address;
+        this.validate();
+    }
+
+    get name(): string {
+        return this._name;
+    }
+
+    get address(): string {
+        return this._address;
+    }
+}
+
+export default Customer;
