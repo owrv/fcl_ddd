@@ -4,10 +4,10 @@ import OrderItem from "./order_item.js";
 
 export default class Order {
     _id: UUID;
-    _customerId: number;
+    _customerId: UUID;
     _items: OrderItem[];
     
-    constructor(customerId: number, items?: OrderItem[]) {
+    constructor(customerId: UUID, items?: OrderItem[]) {
         this._id = uuid();
         this._customerId = customerId;
         this._items = items || [];
