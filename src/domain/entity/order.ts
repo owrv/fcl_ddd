@@ -1,6 +1,7 @@
 const { v4: uuid } = require("uuid");
 import type { UUID } from "crypto";
 import OrderItem from "./order_item.js";
+import { ErrorOrder } from "../../core/errors/error-order.ts";
 
 export default class Order {
     _id: UUID;
@@ -25,10 +26,10 @@ export default class Order {
 
     validate(): void {
         if(this._customerId === undefined || this._customerId === null) {
-            throw new Error("O ID do cliente é inválido.");
+            throw ErrorOrder.InvalidCustomerId();
         }
         if(!this._items || this._items.length === 0) {
-            throw new Error("O pedido deve conter itens.");
+            throw ErrorOrder.EmptyItems();
         }
     }
 }
