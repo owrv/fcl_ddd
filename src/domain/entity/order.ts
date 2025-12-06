@@ -11,6 +11,7 @@ export default class Order {
         this._id = uuid();
         this._customerId = customerId;
         this._items = items || [];
+        this.validate();
     }
 
     get items(): OrderItem[] {
@@ -18,6 +19,7 @@ export default class Order {
     }
 
     includeItem(item: OrderItem): void {
+        this.validate();
         this._items.push(item);
     }
 
