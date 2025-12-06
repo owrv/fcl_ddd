@@ -12,4 +12,8 @@ export default class Order {
         this._customerId = customerId;
         this._items = items || [];
     }
+
+    get items(): OrderItem[] {
+        return this._items;
+    }
 }
