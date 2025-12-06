@@ -13,5 +13,9 @@
     "build": "tsc -p .",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "test": "jest"
+  },
+  "type": "module",
+  "dependencies": {
+    "uuid": "^13.0.0"
   }
 }
