@@ -1,10 +1,11 @@
-import { v4 as uuid } from "uuid";
+const { v4: uuid } = require("uuid");
+import type { UUID } from "crypto";
 // import Address from "./address";
 
 import { ErrorCustomer } from "../../core/errors/error-customer.js";
 
 class Customer {
-    private _id: string;
+    private _id: UUID;
     private _name: string
     private _address: string;
     
