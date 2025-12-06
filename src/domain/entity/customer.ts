@@ -2,7 +2,7 @@ const { v4: uuid } = require("uuid");
 import type { UUID } from "crypto";
 // import Address from "./address";
 
-import { ErrorCustomer } from "../../core/errors/error-customer.js";
+import { ErrorCustomer } from "../../core/errors/error-customer.ts";
 
 class Customer {
     private _id: UUID;
