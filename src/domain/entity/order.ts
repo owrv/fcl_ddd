@@ -20,4 +20,13 @@ export default class Order {
     includeItem(item: OrderItem): void {
         this._items.push(item);
     }
+
+    validate(): void {
+        if(this._customerId === undefined || this._customerId === null) {
+            throw new Error("O ID do cliente é inválido.");
+        }
+        if(!this._items || this._items.length === 0) {
+            throw new Error("O pedido deve conter itens.");
+        }
+    }
 }
