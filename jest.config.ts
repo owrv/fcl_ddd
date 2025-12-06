@@ -79,7 +79,8 @@ const config: Config = {
 
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: [
-    "node_modules"
+    "node_modules",
+    "src"
   ],
 
   // An array of file extensions your modules use
@@ -134,7 +135,9 @@ const config: Config = {
 
   // A list of paths to directories that Jest should use to search for files in
   roots: [
-    "<rootDir>"
+    "<rootDir>",
+    "<rootDir>/tests",
+    "<rootDir>/src",
   ],
 
   // Allows you to use a custom runner instead of Jest's default test runner
@@ -192,6 +195,14 @@ const config: Config = {
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
+
+  modulePaths: [
+    "<rootDir>",
+    "<rootDir>/tests",
+    "<rootDir>/src",
+    "<rootDir>/node_modules",
+    "<rootDir>/../",
+  ],
 
   // Indicates whether each individual test should be reported during the run
   // verbose: undefined,
