@@ -16,4 +16,8 @@ export default class Order {
     get items(): OrderItem[] {
         return this._items;
     }
+
+    includeItem(item: OrderItem): void {
+        this._items.push(item);
+    }
 }
